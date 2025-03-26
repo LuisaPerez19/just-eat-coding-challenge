@@ -34,6 +34,9 @@ gem "jbuilder"
 gem "bootstrap", "~> 5.3"
 gem "sassc-rails"
 
+# Faraday for API call
+gem 'faraday'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
