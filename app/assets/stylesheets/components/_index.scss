@@ -1,0 +1,21 @@
+.checked {
+  color: orange;
+}
+
+.custom-btn{
+  background-color: #f28005;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.custom-btn:hover{
+  background-color: #f28005;
+  border: none;
+  color: white;
+}
+
+.custom-search:focus{
+  border-color: orange;
+  box-shadow: 0 0 5px orange;
+}
