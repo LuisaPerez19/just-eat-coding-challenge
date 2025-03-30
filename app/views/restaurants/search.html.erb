@@ -1,3 +1,5 @@
+<%= render 'banner' %>
+
 <div class="container mt-4">
   <h1>Order food and more</h1>
   <h3 class="mb-3">Restaurants and grocery stores delivering near you</h3>
@@ -9,26 +11,26 @@
 
     <%= render 'flash_alert' %>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @restaurants.each do |restaurant|   %>
-      <div class="col">
-        <div class="card" style="width:90%;">
-          <%= image_tag "Just Eat smaller card.jpeg", class:"card-img-top", alt:"Restaurant photo" %>
-          <div class="card-body">
-            <h5 class="card-title"><%= restaurant["name"] %></h5>
-            <p class="card-text">
-              <span class="fa fa-star checked"></span>
-              <span> <%= restaurant["rating"]["starRating"] %></span>
-              <span>(<%= restaurant["rating"]["count"] %>)</span>
-              <span><%= cuisine = restaurant["cuisines"].map {|cuisine| cuisine["name"]}.first(2).join(", ") %></span>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+      <% @restaurants.each do |restaurant|   %>
+        <div class="col">
+          <div class="card" style="width:90%;">
+            <%= image_tag "Just Eat smaller card.jpeg", class:"card-img-top", alt:"Restaurant photo" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= restaurant["name"] %></h5>
+              <p class="card-text">
+                <span class="fa fa-star checked"></span>
+                <span> <%= restaurant["rating"]["starRating"] %></span>
+                <span>(<%= restaurant["rating"]["count"] %>)</span>
+                <span><%= cuisine = restaurant["cuisines"].map {|cuisine| cuisine["name"]}.first(2).join(", ") %></span>
+                </p>
+              <p class="card-text">
+                <%= restaurant["address"].values_at("firstLine", "city", "postalCode").join(", ") %>
               </p>
-            <p class="card-text">
-              <%= restaurant["address"].values_at("firstLine", "city", "postalCode").join(", ") %>
-            </p>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
 </div>
