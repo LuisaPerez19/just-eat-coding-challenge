@@ -7,7 +7,10 @@ class RestaurantApiService
 
     if response.status != 200
       Rails.logger.error("Got an error (#{response.status}) from the Just Eat API: #{response.body}")
-      return []
+      return {
+        error: true,
+        message: "Sorry, we couldn't load restaurants at this time. Please try again later."
+      }
     end
 
     parsed_jason = JSON.parse(response.body)
