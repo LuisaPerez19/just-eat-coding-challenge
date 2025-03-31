@@ -7,14 +7,16 @@
   <%= render 'search_form' %>
 
   <div class="container mt-4">
+    <% if @restaurants.present? %>
     <h4 class="mb-4">Order from 10 places</h4>
+    <% end %>
 
     <%= render 'flash_alert' %>
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
       <% @restaurants.each do |restaurant|   %>
         <div class="col">
-          <div class="card" style="width:90%;">
+          <div class="card" style="width:90%;height: 100%;">
             <%= image_tag "Just Eat smaller card.jpeg", class:"card-img-top", alt:"Restaurant photo" %>
             <div class="card-body">
               <h5 class="card-title"><%= restaurant["name"] %></h5>

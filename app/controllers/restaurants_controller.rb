@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
       @restaurants = response
 
       if @restaurants.empty?
-        flash[:alert] = "There are no restaurants under this postcode, we hope to be near you soon!"
+        flash[:alert] = "No restaurants available for this postcode at the moment"
         redirect_to search_restaurants_path
       end
     else
