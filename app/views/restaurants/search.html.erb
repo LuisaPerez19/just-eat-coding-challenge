@@ -7,7 +7,9 @@
   <%= render 'search_form' %>
 
   <div class="container mt-4">
+    <% if @restaurants.present? %>
     <h4 class="mb-4">Order from 10 places</h4>
+    <% end %>
 
     <%= render 'flash_alert' %>
 
