@@ -95,6 +95,11 @@ http://localhost:3000
 
 You should now see the Rails application running locally!
 
+The full implementation of the coding assignment can be found in the Rails **`app`** folder, specifically within the files:
+  - `restaurant_api_service.rb`
+  - `restaurants_controller.rb`
+  - `search.html.erb`
+
 ## Assumptions
 
 - The API returns dynamic data on each call. I was unsure if this was intentional, possibly reflecting real-time updates on restaurant availability or opening hours.
@@ -103,10 +108,6 @@ You should now see the Rails application running locally!
 - I selected the first **two cuisine types** because some names in the cuisine data (e.g., "Deals" and "Low Delivery Fees") did not seem like actual cuisine types. Based on the Just Eat website, cuisine categories generally focus on food types, so I followed the same approach.However, this can easily be adjusted to display all cuisine names if needed.
 - The API response consistently returned the rating as a number (either a float or an integer), as specified in the test criteria. Since the test explicitly required displaying the rating as a number and the API provided it in the correct format, I assumed this behavior would remain unchanged and did not implement additional handling for variations in the rating data type.
 - The exercise did not specify whether we should handle API errors for the user. While testing, the API always responded correctly. However, I added a basic error-handling solution that displays a message when the API response is not `200`. This could be improved further for a better user experience.
-- The full implementation of this test can be found in the Rails **`app`** folder, specifically within the files:
-  - `restaurant_api_service.rb`
-  - `restaurants_controller.rb`
-  - `search.html.erb`
 - I created a custom error message: *"No restaurants available for this postcode at the moment."* when there is no restaurant data for a given postcode. You can test this using the fake postcode: `00000`.
 
 ## Improvements
