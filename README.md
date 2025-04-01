@@ -98,6 +98,7 @@ You should now see the Rails application running locally!
 ## Assumptions
 
 - The API returns dynamic data on each call. I was unsure if this was intentional, possibly reflecting real-time updates on restaurant availability or opening hours.
+- User authentication was not required for this test
 - I assumed that API documentation was not provided for this specific test. I encountered an issue where postcodes with spaces caused an invalid URL error in the API response. Typically, API documentation would specify the expected input format, such as postcodes without spaces. To address this, I implemented a solution that removes spaces from the postcode before making the API call.
 - I selected the first **two cuisine types** because some names in the cuisine data (e.g., "Deals" and "Low Delivery Fees") did not seem like actual cuisine types. Based on the Just Eat website, cuisine categories generally focus on food types, so I followed the same approach.However, this can easily be adjusted to display all cuisine names if needed.
 - The API response consistently returned the rating as a number (either a float or an integer), as specified in the test criteria. Since the test explicitly required displaying the rating as a number and the API provided it in the correct format, I assumed this behavior would remain unchanged and did not implement additional handling for variations in the rating data type.
